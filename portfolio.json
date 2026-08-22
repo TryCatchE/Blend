@@ -3,28 +3,29 @@
     "image": "images/work-1.jpg",
     "alt": "Brand identity poster"
   },
-  {
-    "image": "images/work-2.jpg",
-    "alt": "Packaging design"
-  },
-  {
-    "image": "images/work-3.jpg",
-    "alt": "Pet brand logo"
-  },
-  {
-    "image": "images/work-4.jpg",
-    "alt": "Editorial cover"
-  },
-  {
-    "image": "images/work-5.jpg",
-    "alt": "Social campaign poster"
+    {
+    "image": "images/work-1.jpg",
+    "alt": "Brand identity poster"
   },
     {
-    "image": "images/work-5.jpg",
-    "alt": "Social campaign poster"
+    "image": "images/work-1.jpg",
+    "alt": "Brand identity poster"
   },
-   {
-    "image": "images/work-5.jpg",
-    "alt": "Social campaign poster"
-  }
+  {
+    "image": "images/work-1.jpg",
+    "alt": "Brand identity poster"
+  },
+
+  {
+    "image": "images/work-1.jpg",
+    "alt": "Brand identity poster"
+  },
+  {
+    "image": "images/work-1.jpg",
+    "alt": "Brand identity poster"
+  },
+  {
+    "image": "images/work-1.jpg",
+    "alt": "Brand identity poster"
+  }    
 ]
