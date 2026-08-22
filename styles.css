@@ -381,6 +381,10 @@ details[open] summary::after {
   outline: 2px solid var(--primary);
 }
 
+.email {
+  background: #ead7f8 !important;
+}
+
 /* Contact icons */
 .contact-icons {
   width: min(100%, var(--content-width));
@@ -479,4 +483,5 @@ footer p + p {
   .track {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
