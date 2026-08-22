@@ -75,6 +75,11 @@ a {
   margin-top: 16px;
 }
 
+.goverlay {
+  background: rgba(0, 0, 0, 0.75) !important;
+}
+
+
 .header-cnt{
   isolation: isolate;
   position: sticky;
