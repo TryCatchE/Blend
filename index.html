@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Studio Generic — High-end visual identities</title>
+    <meta
+      name="description"
+      content="Independent design studio crafting high-end visual identities, packaging and digital experiences."
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="phone-modal" role="dialog" aria-modal="true" aria-labelledby="phone-modal-title">
+      <form class="phone-modal-card" id="phone-form">
+        <h2 id="phone-modal-title">Demo Website</h2>
+        <p>This website is currently available for testing purposes.</p>
+        <label for="visitor-phone">Test input</label>
+        <input id="visitor-phone" name="visitor-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Test input" />
+        <button class="btn block" type="submit">Continue</button>
+      </form>
+    </div>
+    <header class="nav">
+      <a class="logo" href="#top">BLENDING.DESIGN<span>Creative Studio</span></a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <span class="languages"><a href="#top">EN</a> <a href="#top">GR</a></span>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <span class="blob" aria-hidden="true"></span>
+        <h1>Crafting high-end visual identities and digital experiences.</h1>
+        <p>Over 13 years of expertise in turning strategic concepts into premium design.</p>
+        <a class="btn" href="#contact">Get in touch</a>
+      </section>
+
+      <section id="services" class="section narrow">
+        <h2>Services</h2>
+        <div class="accordion">
+          <details>
+            <summary>Brand</summary>
+            <div class="service-list-wrap">
+            <ul class="service-list">
+              <li>Brand Identity</li>
+              <li>Logo Design</li>
+              <li>Brand Guidelines</li>
+              <li>Packaging Design</li>
+              <li>Art Direction</li>
+            </ul>
+            </div>
+          </details>
+          <details>
+            <summary>Content</summary>
+            <div class="service-list-wrap">
+            <ul class="service-list">
+              <li>Social Media Design</li>
+              <li>Campaign Visuals</li>
+              <li>Email Design</li>
+              <li>Presentation Design</li>
+              <li>Creative Assets</li>
+            </ul>
+            </div>
+          </details>
+          <details>
+            <summary>Digital</summary>
+            <div class="service-list-wrap">
+            <ul class="service-list">
+              <li>Website Design</li>
+              <li>Landing Pages</li>
+              <li>UX - UI Design</li>
+            </ul>
+            </div>
+          </details>
+          <details>
+            <summary>Motion</summary>
+            <div class="service-list-wrap">
+            <ul class="service-list">
+              <li>Motion Graphics</li>
+              <li>Animated Social Posts</li>
+              <li>GIFs</li>
+              <li>Video Editing</li>
+              <li>Reels &amp; Ads</li>
+            </ul>
+            </div>
+          </details>
+          <details>
+            <summary>Print</summary>
+            <div class="service-list-wrap">
+            <ul class="service-list">
+              <li>Brochures</li>
+              <li>Flyers</li>
+              <li>Posters</li>
+              <li>Catalogues</li>
+              <li>Event Materials</li>
+            </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section">
+        <h2>Portfolio</h2>
+        <div class="carousel">
+          <button class="arrow" data-dir="-1" aria-label="Previous projects">&#8249;</button>
+          <div class="track">
+            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/brand-identity/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/brand-identity/600/600" alt="Brand identity poster" /></a>
+            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/packaging-design/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/packaging-design/600/600" alt="Packaging design" /></a>
+            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/pet-brand-logo/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/pet-brand-logo/600/600" alt="Pet brand logo" /></a>
+            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/editorial-cover/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/editorial-cover/600/600" alt="Editorial cover" /></a>
+            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/social-campaign/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/social-campaign/600/600" alt="Social campaign poster" /></a>
+            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/storefront-signage/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/storefront-signage/600/600" alt="Storefront signage" /></a>
+            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/editorial-design/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/editorial-design/600/600" alt="Editorial design" /></a>
+          </div>
+          <button class="arrow" data-dir="1" aria-label="Next projects">&#8250;</button>
+        </div>
+      </section>
+
+      <section id="contact" class="section narrow">
+        <h2>Contact</h2>
+        <form class="form" onsubmit="event.preventDefault(); this.reset(); alert('Thanks — we\'ll be in touch shortly.');">
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" required />
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Type your message here." required></textarea>
+          <button class="btn block" type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="contact-icons">
+        <div>
+          <p>Click below to call:</p>
+          <a class="icon contact-link" href="#" aria-label="Call the studio"><img src="png/phone.svg" alt="" /></a>
+        </div>
+        <div>
+          <p>Chat Directly:</p>
+          <span class="icon-row">
+            <a class="icon chat-viber contact-link" href="#" aria-label="Chat on Viber"><img src="png/viber-transparent.png" alt="" /></a>
+            <a class="icon contact-link" href="#" aria-label="Chat on WhatsApp"><img src="png/whatsapp.png" alt="" /></a>
+          </span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Blending.Design</p>
+      <p><a href="#top">Privacy Policy</a> · <a href="#top">Terms</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+      const phoneForm = document.querySelector("#phone-form");
+      const phoneModal = document.querySelector(".phone-modal");
+      const phoneInput = document.querySelector("#visitor-phone");
+      const contactLinks = document.querySelectorAll(".contact-link");
+
+      phoneForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const phoneDigits = phoneInput.value.replace(/\D/g, "");
+        const digitsWithoutPrefix = phoneInput.value.trim().startsWith("00")
+          ? phoneDigits.slice(2)
+          : phoneDigits;
+        const internationalDigits = digitsWithoutPrefix.startsWith("30")
+          ? digitsWithoutPrefix
+          : `30${digitsWithoutPrefix}`;
+
+        contactLinks[0].href = `tel:+${internationalDigits}`;
+        contactLinks[1].href = `viber://chat?number=%2B${internationalDigits}`;
+        contactLinks[2].href = `https://wa.me/${internationalDigits}`;
+        phoneModal.hidden = true;
+      });
+
+      const track = document.querySelector(".track");
+      const items = [...track.children];
+      let page = 0;
+      let perPage;
+      let pages;
+      function renderPortfolio() {
+        const columns = getComputedStyle(track).gridTemplateColumns.split(" ").length;
+        perPage = columns * 2;
+        pages = Math.ceil(items.length / perPage);
+        page = page % pages;
+        const firstItem = items[0];
+        const gap = parseFloat(getComputedStyle(track).rowGap);
+        track.style.minHeight = `${firstItem.getBoundingClientRect().height * 2 + gap}px`;
+        items.forEach((el, i) => {
+          el.style.display =
+            i >= page * perPage && i < page * perPage + perPage ? "" : "none";
+        });
+      }
+
+      const accordion = document.querySelector("#services .accordion");
+
+      const details = [...accordion.querySelectorAll("details")];
+      function closeDetail(detail) {
+        const listWrap = detail.querySelector(".service-list-wrap");
+        if (!detail.open) return Promise.resolve();
+
+        detail.dataset.animating = "true";
+        listWrap.style.height = `${listWrap.scrollHeight}px`;
+        return new Promise((resolve) => {
+          listWrap.addEventListener("transitionend", () => {
+            detail.open = false;
+            listWrap.style.height = "0px";
+            delete detail.dataset.animating;
+            resolve();
+          }, { once: true });
+          requestAnimationFrame(() => listWrap.style.height = "0px");
+        });
+      }
+      function openDetail(detail) {
+        const listWrap = detail.querySelector(".service-list-wrap");
+        detail.dataset.animating = "true";
+        detail.open = true;
+        listWrap.style.height = "0px";
+        const targetHeight = listWrap.scrollHeight;
+        return new Promise((resolve) => {
+          listWrap.addEventListener("transitionend", () => {
+            listWrap.style.height = "auto";
+            delete detail.dataset.animating;
+            resolve();
+          }, { once: true });
+          requestAnimationFrame(() => listWrap.style.height = `${targetHeight}px`);
+        });
+      }
+
+      details.forEach((detail) => {
+        detail.querySelector("summary").addEventListener("click", async (event) => {
+          event.preventDefault();
+          if (detail.dataset.animating) return;
+
+          if (detail.open) {
+            await closeDetail(detail);
+            return;
+          }
+
+          const openDetails = details.filter((other) => other !== detail && other.open);
+          await Promise.all(openDetails.map(closeDetail));
+          await openDetail(detail);
+        });
+      });
+      document.querySelectorAll(".arrow").forEach((b) =>
+        b.addEventListener("click", () => {
+          page = (page + Number(b.dataset.dir) + pages) % pages;
+          renderPortfolio();
+        })
+      );
+      renderPortfolio();
+      window.addEventListener("resize", renderPortfolio);
+
+      const lightbox = GLightbox({
+        selector: ".glightbox",
+        touchNavigation: true,
+        loop: true,
+        closeButton: true
+      });
+    </script>
+  </body>
+</html>
