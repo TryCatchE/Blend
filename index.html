@@ -107,14 +107,8 @@
         <h2>Portfolio</h2>
         <div class="carousel">
           <button class="arrow" data-dir="-1" aria-label="Previous projects">&#8249;</button>
-          <div class="track">
-            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/brand-identity/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/brand-identity/600/600" alt="Brand identity poster" /></a>
-            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/packaging-design/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/packaging-design/600/600" alt="Packaging design" /></a>
-            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/pet-brand-logo/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/pet-brand-logo/600/600" alt="Pet brand logo" /></a>
-            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/editorial-cover/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/editorial-cover/600/600" alt="Editorial cover" /></a>
-            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/social-campaign/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/social-campaign/600/600" alt="Social campaign poster" /></a>
-            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/storefront-signage/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/storefront-signage/600/600" alt="Storefront signage" /></a>
-            <a class="portfolio-item glightbox" href="https://picsum.photos/seed/editorial-design/600/600" data-gallery="portfolio"><img src="https://picsum.photos/seed/editorial-design/600/600" alt="Editorial design" /></a>
+
+          <div class="track" id="portfolio-track">
           </div>
           <button class="arrow" data-dir="1" aria-label="Next projects">&#8250;</button>
         </div>
@@ -182,30 +176,89 @@
         phoneModal.hidden = true;
       });
 
-      const track = document.querySelector(".track");
+      const portfolioTrack = document.querySelector("#portfolio-track");
+
+      async function loadPortfolio() {
+        try {
+          const response = await fetch("portfolio.json");
+
+          if (!response.ok) {
+            throw new Error("Could not load portfolio.json");
+          }
+
+          const portfolio = await response.json();
+
+          portfolioTrack.innerHTML = portfolio
+            .map((item) => `
+              <a
+                class="portfolio-item glightbox"
+                href="${item.image}"
+                data-gallery="portfolio"
+              >
+                <img
+                  src="${item.image}"
+                  alt="${item.alt || "Portfolio project"}"
+                />
+              </a>
+            `)
+            .join("");
+
+          track = document.querySelector(".track");
+          items = [...track.children];
+
+          renderPortfolio();
+
+          GLightbox({
+            selector: ".glightbox",
+            touchNavigation: true,
+            loop: true,
+            closeButton: true
+          });
+
+        } catch (error) {
+          console.error("Portfolio loading error:", error);
+        }
+      }
+
+
+      let track = document.querySelector(".track");
       const carousel = document.querySelector(".carousel");
       const portfolioArrows = [...document.querySelectorAll(".arrow")];
-      const items = [...track.children];
+      let items = [...track.children];
       let page = 0;
       let perPage;
       let pages;
       function renderPortfolio() {
+        if (!items.length) return;
+
         const carouselGap = parseFloat(getComputedStyle(carousel).columnGap);
-        const arrowSpace = portfolioArrows[0].getBoundingClientRect().width + carouselGap;
+        const arrowSpace =
+          portfolioArrows[0].getBoundingClientRect().width + carouselGap;
+
         carousel.style.setProperty("--arrow-space", `${arrowSpace}px`);
-        const columns = getComputedStyle(track).gridTemplateColumns.split(" ").length;
+
+        const columns =
+          getComputedStyle(track).gridTemplateColumns.split(" ").length;
+
         perPage = columns * 2;
         pages = Math.ceil(items.length / perPage);
+
         page = page % pages;
+
         const firstItem = items[0];
         const gap = parseFloat(getComputedStyle(track).rowGap);
-        track.style.minHeight = `${firstItem.getBoundingClientRect().height * 2 + gap}px`;
+
+        track.style.minHeight =
+          `${firstItem.getBoundingClientRect().height * 2 + gap}px`;
+
         items.forEach((el, i) => {
           el.style.display =
-            i >= page * perPage && i < page * perPage + perPage ? "" : "none";
+            i >= page * perPage &&
+            i < page * perPage + perPage
+              ? ""
+              : "none";
         });
       }
-
       const accordion = document.querySelector("#services .accordion");
 
       const details = [...accordion.querySelectorAll("details")];
@@ -262,15 +315,10 @@
           renderPortfolio();
         })
       );
-      renderPortfolio();
       window.addEventListener("resize", renderPortfolio);
 
-      const lightbox = GLightbox({
-        selector: ".glightbox",
-        touchNavigation: true,
-        loop: true,
-        closeButton: true
-      });
+
+      loadPortfolio();
     </script>
   </body>
 </html>
