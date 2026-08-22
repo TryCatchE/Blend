@@ -175,11 +175,16 @@
       });
 
       const track = document.querySelector(".track");
+      const carousel = document.querySelector(".carousel");
+      const portfolioArrows = [...document.querySelectorAll(".arrow")];
       const items = [...track.children];
       let page = 0;
       let perPage;
       let pages;
       function renderPortfolio() {
+        const carouselGap = parseFloat(getComputedStyle(carousel).columnGap);
+        const arrowSpace = portfolioArrows[0].getBoundingClientRect().width + carouselGap;
+        carousel.style.setProperty("--arrow-space", `${arrowSpace}px`);
         const columns = getComputedStyle(track).gridTemplateColumns.split(" ").length;
         perPage = columns * 2;
         pages = Math.ceil(items.length / perPage);

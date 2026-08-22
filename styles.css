@@ -8,10 +8,16 @@
   --border: rgba(17, 17, 17, 0.48);
   --radius: 0;
   --font: "Helvetica Neue", Arial, sans-serif;
+  --content-width: 1100px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
@@ -70,7 +76,8 @@ a {
 }
 /* Nav */
 .nav {
-  max-width: 1100px;
+  width: min(100%, var(--content-width));
+  max-width: var(--content-width);
   margin: 0 auto;
   padding: 28px 24px;
   display: flex;
@@ -113,7 +120,8 @@ a {
 /* Hero */
 .hero {
   position: relative;
-  max-width: 900px;
+  width: min(100%, var(--content-width));
+  max-width: var(--content-width);
   margin: 0 auto;
   padding: 220px 24px 190px;
   text-align: center;
@@ -175,12 +183,13 @@ a {
 
 /* Sections */
 .section {
-  max-width: 1100px;
+  width: min(100%, var(--content-width));
+  max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 24px 170px;
 }
 .section.narrow {
-  max-width: 768px;
+  max-width: var(--content-width);
 }
 h2 {
   text-align: center;
@@ -191,6 +200,7 @@ h2 {
 /* Accordion */
 .accordion {
   margin-top: 52px;
+  width: 100%;
 }
 details {
   border-bottom: 0;
@@ -238,16 +248,23 @@ details[open] summary::after {
   font-size: 24px;
 }
 
+#contact {
+  min-width: 0;
+  overflow: hidden;
+}
+
 /* Portfolio */
 .carousel {
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  --arrow-space: 0px;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  column-gap: 12px;
+  width: calc(100% + (var(--arrow-space) * 2));
+  margin: 40px 0 0 calc(var(--arrow-space) * -1);
 }
 .track {
-  flex: 1;
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
@@ -292,6 +309,7 @@ details[open] summary::after {
 
 /* Form */
 .form {
+  width: 100%;
   max-width: 650px;
   margin: 32px auto 0;
 }
@@ -330,6 +348,8 @@ details[open] summary::after {
 
 /* Contact icons */
 .contact-icons {
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   gap: 64px;
@@ -388,6 +408,10 @@ footer p + p {
 }
 
 @media (max-width: 700px) {
+  .carousel {
+    width: 100%;
+    margin-left: 0;
+  }
   .nav {
     align-items: flex-start;
   }
