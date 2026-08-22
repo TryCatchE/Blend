@@ -111,7 +111,7 @@ a {
   background-color: transparent;
 }
 .nav.is-scrolled::before {
-  background-color: #aa98ea;
+  background-color: #ead7f8;
   box-shadow: 0 2px 12px rgba(17, 17, 17, 0.12);
 }
 .nav > * {
