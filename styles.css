@@ -74,22 +74,19 @@ a {
 .phone-modal-card .btn.block {
   margin-top: 16px;
 }
-
 .goverlay {
   background: rgba(0, 0, 0, 0.45) !important;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
-.header-cnt{
+.header-cnt {
   isolation: isolate;
   position: sticky;
   top: 0;
   z-index: 10;
 }
-/* Nav */
 .nav {
-
   width: min(100%, var(--content-width));
   max-width: var(--content-width);
   margin: 0 auto;
@@ -153,7 +150,6 @@ a {
   margin-left: 4px;
 }
 
-/* Hero */
 .hero {
   position: relative;
   width: min(100%, var(--content-width));
@@ -162,6 +158,7 @@ a {
   padding: 220px 24px 190px;
   text-align: center;
 }
+
 .blob {
   position: absolute;
   left: -60px;
@@ -170,7 +167,14 @@ a {
   height: 160px;
   border-radius: 50%;
   background: rgba(190, 163, 237, 0.7);
-  clip-path: polygon(0 0, 100% 0, 100% 55%, 55% 55%, 55% 100%, 0 100%);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 55%,
+    55% 55%,
+    55% 100%,
+    0 100%
+  );
   filter: blur(12px);
   opacity: 1;
 }
@@ -190,7 +194,6 @@ a {
   color: var(--foreground);
 }
 
-/* Buttons */
 .btn {
   position: relative;
   display: inline-block;
@@ -217,7 +220,6 @@ a {
   font-size: 16px;
 }
 
-/* Sections */
 .section {
   width: min(100%, var(--content-width));
   max-width: var(--content-width);
@@ -233,7 +235,6 @@ h2 {
   margin: 0;
 }
 
-/* Accordion */
 .accordion {
   margin-top: 52px;
   width: 100%;
@@ -289,7 +290,6 @@ details[open] summary::after {
   overflow: hidden;
 }
 
-/* Portfolio */
 .carousel {
   --arrow-space: 0px;
   display: grid;
@@ -343,7 +343,6 @@ details[open] summary::after {
   color: var(--foreground);
 }
 
-/* Form */
 .form {
   width: 100%;
   max-width: 650px;
@@ -386,7 +385,6 @@ details[open] summary::after {
   background: #ead7f8 !important;
 }
 
-/* Contact icons */
 .contact-icons {
   width: min(100%, var(--content-width));
   margin: 0 auto;
@@ -448,10 +446,6 @@ footer p + p {
 }
 
 @media (max-width: 700px) {
-  .carousel {
-    width: 100%;
-    margin-left: 0;
-  }
   .nav {
     align-items: flex-start;
   }
@@ -481,8 +475,47 @@ footer p + p {
     left: -30px;
     top: 80px;
   }
+  .carousel {
+    position: relative;
+
+    width: 100%;
+    margin: 40px 0 0;
+
+    display: block;
+  }
+
   .track {
+    width: 100%;
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+
+    transform: translateY(-50%);
+
+    width: 32px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    font-size: 32px;
+  }
+
+  .arrow[data-dir="-1"] {
+    left: -30px;
+  }
+
+  .arrow[data-dir="1"] {
+    right: -30px;
+  }
+
+  .contact-icons {
+    gap: 32px;
+  }
 }
