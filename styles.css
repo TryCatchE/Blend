@@ -76,9 +76,10 @@ a {
 }
 
 .goverlay {
-  background: rgba(0, 0, 0, 0.75) !important;
+  background: rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
-
 
 .header-cnt{
   isolation: isolate;
