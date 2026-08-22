@@ -17,7 +17,7 @@
 
 html,
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -76,14 +76,40 @@ a {
 }
 /* Nav */
 .nav {
+  isolation: isolate;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   width: min(100%, var(--content-width));
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 28px 24px;
+  background-color: transparent;
+  transition: background-color 250ms ease, box-shadow 250ms ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: transparent;
+  transition: background-color 250ms ease, box-shadow 250ms ease;
+}
+.nav.is-scrolled {
+  background-color: transparent;
+}
+.nav.is-scrolled::before {
+  background-color: #aa98ea;
+  box-shadow: 0 2px 12px rgba(17, 17, 17, 0.12);
+}
+.nav > * {
+  position: relative;
+  z-index: 1;
+}
+
 .logo {
   font-size: 20px;
   font-weight: 700;

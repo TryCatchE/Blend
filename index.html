@@ -153,6 +153,14 @@
 
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
+      const nav = document.querySelector(".nav");
+      function updateStickyNav() {
+        const isScrolled = window.scrollY > 0;
+        nav.classList.toggle("is-scrolled", isScrolled);
+      }
+      window.addEventListener("scroll", updateStickyNav, { passive: true });
+      updateStickyNav();
+
       const phoneForm = document.querySelector("#phone-form");
       const phoneModal = document.querySelector(".phone-modal");
       const phoneInput = document.querySelector("#visitor-phone");
