@@ -74,12 +74,16 @@ a {
 .phone-modal-card .btn.block {
   margin-top: 16px;
 }
-/* Nav */
-.nav {
+
+.header-cnt{
   isolation: isolate;
   position: sticky;
   top: 0;
   z-index: 10;
+}
+/* Nav */
+.nav {
+
   width: min(100%, var(--content-width));
   max-width: var(--content-width);
   margin: 0 auto;
