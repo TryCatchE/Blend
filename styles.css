@@ -9,6 +9,10 @@
   --radius: 0;
   --font: "Helvetica Neue", Arial, sans-serif;
   --content-width: 1100px;
+--gradient-angle: 115deg;
+--gradient-left: #aa98ea;
+--gradient-right: #c99bdf;
+
 }
 
 /* =========================
@@ -120,11 +124,60 @@ body {
   overflow-x: clip;
 }
 
+  /* =========================
+     Auto rotation of gradiant
+  ========================= */
+
+/* body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--foreground);
+
+  background: linear-gradient(
+    115deg,
+    #aa98ea 0%,
+    #c99bdf 100%
+  );
+
+  background-size: 200% 200%;
+  animation: gradientRotate 12s ease-in-out infinite;
+
+  background-attachment: fixed;
+}
+
+@keyframes gradientRotate {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  25% {
+    background-position: 100% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  75% {
+    background-position: 0% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+} */
+
 body {
   margin: 0;
   font-family: var(--font);
   color: var(--foreground);
-  background: linear-gradient(115deg, #aa98ea 0%, #c99bdf 100%);
+
+  background: linear-gradient(
+    var(--gradient-angle),
+    #aa98ea 0%,
+    #c99bdf 100%
+  );
+
   background-attachment: fixed;
 }
 
