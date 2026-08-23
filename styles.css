@@ -81,10 +81,10 @@ a {
 }
 
 .header-cnt {
-  isolation: isolate;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 10;
+  width: 100%;
 }
 .nav {
   width: min(100%, var(--content-width));
