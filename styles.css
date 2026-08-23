@@ -167,6 +167,16 @@ body {
   }
 } */
 
+::selection {
+  background: #d8c6f2;
+  color: #111111;
+}
+
+::-moz-selection {
+  background: #d8c6f2;
+  color: #111111;
+}
+
 body {
   margin: 0;
   font-family: var(--font);
