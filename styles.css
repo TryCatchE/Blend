@@ -261,14 +261,6 @@ a {
   margin-left: 4px;
 }
 
-.hero {
-  position: relative;
-  width: min(100%, var(--content-width));
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 220px 24px 190px;
-  text-align: center;
-}
 
 .blob {
   position: absolute;
@@ -624,6 +616,25 @@ footer p + p {
   }
 }
 
+.hero {
+  position: relative;
+  width: min(100%, var(--content-width));
+  max-width: var(--content-width);
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  margin: 0 auto;
+  padding: 160px 24px 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
 @media (max-width: 700px) {
   .nav {
     align-items: flex-start;
@@ -641,8 +652,8 @@ footer p + p {
     font-size: 10px;
   }
   .hero {
-    padding-top: 150px;
-    padding-bottom: 140px;
+    min-height: 100svh;
+    padding: 120px 24px 80px;
   }
   .hero h1 {
     font-size: 30px;
