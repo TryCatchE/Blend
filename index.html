@@ -12,15 +12,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="phone-modal" role="dialog" aria-modal="true" aria-labelledby="phone-modal-title">
-      <form class="phone-modal-card" id="phone-form">
-        <h2 id="phone-modal-title">Demo Website</h2>
-        <p>This website is currently available for testing purposes.</p>
-        <label for="visitor-phone">Test input</label>
-        <input id="visitor-phone" name="visitor-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Test input" />
-        <button class="btn block" type="submit">Continue</button>
-      </form>
-    </div>
     <header class="header-cnt">
       <div class="nav">
         <a class="logo" href="#top">BLENDING.DESIGN<span>Creative Studio</span></a>
@@ -128,13 +119,13 @@
       <section class="contact-icons">
         <div>
           <p>Click below to call:</p>
-          <a class="icon contact-link" href="#" aria-label="Call the studio"><img src="png/phone.svg" alt="" /></a>
+          <a class="icon contact-link" href="tel:+1234567890" aria-label="Call the studio"><img src="png/phone.svg" alt="" /></a>
         </div>
         <div>
           <p>Chat Directly:</p>
           <span class="icon-row">
-            <a class="icon chat-viber contact-link" href="#" aria-label="Chat on Viber"><img src="png/viber-transparent.png" alt="" /></a>
-            <a class="icon contact-link" href="#" aria-label="Chat on WhatsApp"><img src="png/whatsapp.png" alt="" /></a>
+            <a class="icon chat-viber contact-link" href="viber://chat?number=%2B+1234567890" aria-label="Chat on Viber"><img src="png/viber-transparent.png" alt="" /></a>
+            <a class="icon contact-link" href="https://wa.me/+1234567890" aria-label="Chat on WhatsApp"><img src="png/whatsapp.png" alt="" /></a>
           </span>
         </div>
       </section>

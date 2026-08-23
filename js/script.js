@@ -1,36 +1,4 @@
 /* =========================
-   PHONE MODAL
-========================= */
-
-const phoneForm = document.querySelector("#phone-form");
-const phoneModal = document.querySelector(".phone-modal");
-const phoneInput = document.querySelector("#visitor-phone");
-const contactLinks = document.querySelectorAll(".contact-link");
-
-if (phoneForm) {
-  phoneForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const phoneDigits = phoneInput.value.replace(/\D/g, "");
-
-    const digitsWithoutPrefix = phoneInput.value.trim().startsWith("00")
-      ? phoneDigits.slice(2)
-      : phoneDigits;
-
-    const internationalDigits = digitsWithoutPrefix.startsWith("30")
-      ? digitsWithoutPrefix
-      : `30${digitsWithoutPrefix}`;
-
-    contactLinks[0].href = `tel:+${internationalDigits}`;
-    contactLinks[1].href = `viber://chat?number=%2B${internationalDigits}`;
-    contactLinks[2].href = `https://wa.me/${internationalDigits}`;
-
-    phoneModal.hidden = true;
-  });
-}
-
-
-/* =========================
    PORTFOLIO
 ========================= */
 
